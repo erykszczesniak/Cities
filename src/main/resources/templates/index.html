@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>City manager</title>
+</head>
+<body>
+<p th:text="${message}">asdf</p>
+<div class="jumbotron text-center">
+<h1>Add city:</h1>
+</div>
+<form th:action="@{/cities}" th:object="${cityModel}" method="post">
+    <p><input type="text" th:field="*{name}" placeholder="city name" /></p>
+    <p><input type="number" th:field="*{population}" placeholder="population" /></p>
+    <p><input type="submit" value="Add City" /></p>
+</form>
+
+<a th:href="@{/cities}">List all cities</a>
+    </div>
+</body>
+</html>
